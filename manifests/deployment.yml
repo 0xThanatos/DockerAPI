@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aspnet-6463"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aspnet-6463"
+  template:
+    metadata:
+      labels:
+        app: "aspnet-6463"
+    spec:
+      containers:
+        - name: "aspnet-6463"
+          image: "aspnetdockerapi.azurecr.io/aspnet"
+          ports:
+          - containerPort: 80
